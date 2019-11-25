@@ -4,4 +4,6 @@
 #define HEIGHT 30
 #define WIDTH 30
 
+void nextGen(bool tab[HEIGHT][WIDTH]);
+
 #endif // GAME_OF_LIFE_H

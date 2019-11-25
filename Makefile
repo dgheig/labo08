@@ -6,6 +6,7 @@ WARNING = -Wall
 
 COMPILE = $(GXX) $(STD) $(WARNING)
 
+SRC = src
 OBJ = obj
 BUILDS = builds
 TESTS = tests
@@ -25,11 +26,11 @@ obj_dir:
 
 setup: build_dir obj_dir
 
-# delta_date.o: setup utilities.o src/constants.h src/delta_date.h src/delta_date.cpp
-# 	$(COMPILE) -c src/delta_date.cpp -o $(OBJ)/delta_date.o
+game_of_life.o: setup $(SRC)/game_of_life.h $(SRC)/game_of_life.cpp
+	$(COMPILE) -c $(SRC)/game_of_life.cpp -o $(OBJ)/game_of_life.o
 
-main: setup labo_08_gachet_jean_gallay_david.cpp
-	$(COMPILE) labo_08_gachet_jean_gallay_david.cpp -o $(BUILDS)/labo08
+main: setup game_of_life.o labo_08_gachet_jean_gallay_david.cpp
+	$(COMPILE) $(SRC)/game_of_life.h $(OBJ)/game_of_life.o labo_08_gachet_jean_gallay_david.cpp -o $(BUILDS)/labo08
 
 # is_date_valid: $(TESTS)/is_date_valid.cpp utilities.o
 # 	$(COMPILE) src/utilities.h $(OBJ)/utilities.o $(TESTS)/is_date_valid.cpp -o $(BUILDS)/is_date_valid

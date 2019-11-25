@@ -13,6 +13,7 @@ Remarque(s) : Documentation is available under pdf and html format.
 Compilateur : MinGW-g++ 6.3.0 and g++ 7.4.0
 -----------------------------------------------------------------------------------*/
 #include <cstdlib>
+#include "src/game_of_life.h"
 
 int main() {
    return EXIT_SUCCESS;
