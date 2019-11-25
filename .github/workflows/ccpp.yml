@@ -1,0 +1,24 @@
+name: C/C++ CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+    - name: compile main
+      run: make main
+
+  tests:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+    - name: compile tests
+      run: make compile_tests
+    # - name: test is_date_valid
+    #   run: ./builds/is_date_valid
