@@ -28,7 +28,7 @@ setup: build_dir obj_dir
 # delta_date.o: setup utilities.o src/constants.h src/delta_date.h src/delta_date.cpp
 # 	$(COMPILE) -c src/delta_date.cpp -o $(OBJ)/delta_date.o
 
-main: labo_08_gachet_jean_gallay_david.cpp
+main: setup labo_08_gachet_jean_gallay_david.cpp
 	$(COMPILE) labo_08_gachet_jean_gallay_david.cpp -o $(BUILDS)/labo08
 
 # is_date_valid: $(TESTS)/is_date_valid.cpp utilities.o
