@@ -1,10 +1,7 @@
 #ifndef GRID_H
 #define GRID_H
 
-const unsigned HEIGHT = 30;
-const unsigned WIDTH = 30;
-
-
-char GAME_GRID[HEIGHT * WIDTH];
+#define HEIGHT 30
+#define WIDTH 30
 
 #endif // GRID_H
