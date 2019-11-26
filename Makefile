@@ -2,9 +2,12 @@ GCC = g++
 GXX = $(GCC)
 
 STD = -std=c++11
-WARNING = -Wall
+FLAGS = -Wall
+ifdef DEBUG
+	FLAGS += -DDEBUG
+endif
 
-COMPILE = $(GXX) $(STD) $(WARNING)
+COMPILE = $(GXX) $(STD) $(FLAGS)
 
 SRC = src
 OBJ = obj

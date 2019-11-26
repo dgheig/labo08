@@ -12,9 +12,13 @@ Remarque(s) : Documentation is available under pdf and html format.
 
 Compilateur : MinGW-g++ 6.3.0 and g++ 7.4.0
 -----------------------------------------------------------------------------------*/
+#include <iostream>
 #include <cstdlib>
 #include "src/game_of_life.h"
 
 int main() {
+   #ifdef DEBUG
+      std::cout << "Debug is active" << std::endl;
+   #endif
    return EXIT_SUCCESS;
 }
