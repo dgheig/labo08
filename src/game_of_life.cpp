@@ -18,6 +18,19 @@ char get_display_char(bool value) {
 void computeNextGen(bool tab[HEIGHT][WIDTH])
 {
 
+    #ifdef DEBUG
+
+    #endif
+}
+
+
+void computeMultipleGens(unsigned n, bool tab[HEIGHT][WIDTH])
+{
+    for(int iteration = 0; iteration < n; ++iteration)
+    {
+        computeNextGen(tab);
+        displayGame(tab);
+    }
 }
 
 void displayGame(bool tab[HEIGHT][WIDTH])
