@@ -16,7 +16,7 @@ TESTS = tests
 
 all: main compile_tests
 
-compile_tests: display_game
+compile_tests: display_game compute_multiple_gens
 
 documentation:
 	mkdir -p doc && cd doc && mkdir -p doxy && doxygen Doxyfile && make -C doxy/latex && cp doxy/latex/refman.pdf doc.pdf
@@ -38,3 +38,6 @@ main: setup game_of_life.o labo_08_gachet_jean_gallay_david.cpp
 # TESTS
 display_game: $(TESTS)/display_game.cpp game_of_life.o
 	$(COMPILE) src/game_of_life.h $(OBJ)/game_of_life.o $(TESTS)/display_game.cpp -o $(BUILDS)/display_game
+
+compute_multiple_gens: $(TESTS)/compute_multiple_gens.cpp game_of_life.o
+	$(COMPILE) src/game_of_life.h $(OBJ)/game_of_life.o $(TESTS)/compute_multiple_gens.cpp -o $(BUILDS)/compute_multiple_gens
