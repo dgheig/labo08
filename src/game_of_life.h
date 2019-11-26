@@ -5,6 +5,8 @@
 #define WIDTH 8
 #define ALIVE true
 #define DEAD false
+#define ALIVE_CHAR 'X'
+#define DEAD_CHAR 'O'
 
 /**
  * Take a game and computes the next generation.

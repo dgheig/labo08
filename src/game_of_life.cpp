@@ -3,6 +3,7 @@
 #include <iomanip>
 
 using namespace std;
+#define print cout << setw(3)
 
 unsigned nbOfNeighbours(bool tab[HEIGHT][WIDTH], int line, int column);
 
@@ -44,13 +45,13 @@ bool computeNextGen(bool tab[HEIGHT][WIDTH])
          temp[line][column] = newValue;
       }
    }
-   
+
    #ifdef DEBUG
    
    
    
    #endif
-   
+
    copyTab(temp, tab);
    
    return changeDetected;
@@ -68,7 +69,6 @@ void computeMultipleGens(bool tab[HEIGHT][WIDTH], unsigned n)
 
 void displayGame(bool tab[HEIGHT][WIDTH])
 {
-   #define print cout << setw(3)
    print << ' ';
    for(size_t column = 0; column < WIDTH; ++column) print << column + 1;
    cout << endl;
@@ -107,11 +107,11 @@ char getDisplayChar(bool value)
     switch (value)
     {
       case ALIVE:
-         return 'X';
+         return ALIVE_CHAR;
       case DEAD:
-         return 'O';
+         return DEAD_CHAR;
     }
-    return 'O';
+    return DEAD_CHAR;
 }
 
 
