@@ -4,16 +4,9 @@
 
 using namespace std;
 
-char get_display_char(bool value) {
-    switch (value)
-    {
-    case ALIVE:
-        return 'X';
-    case DEAD:
-        return 'O';
-    }
-    return 'O';
-}
+unsigned nbOfNeighbours(int line, int column, bool tab[HEIGHT][WIDTH]);
+
+char getDisplayChar(bool value);
 
 void computeNextGen(bool tab[HEIGHT][WIDTH])
 {
@@ -35,40 +28,50 @@ void computeMultipleGens(unsigned n, bool tab[HEIGHT][WIDTH])
 
 void displayGame(bool tab[HEIGHT][WIDTH])
 {
-
-    using std::cout;
-    using std::endl;
-    #define print cout << setw(3)
-    for(size_t column = 0; column < WIDTH; ++column) print << column;
-    cout << endl;
-    for(size_t line = 0; line < HEIGHT; ++line)
-    {
-        print << line;
-        for(size_t column = 0; column < WIDTH; ++column)
-        {
-            print << get_display_char(tab[line][column]);
-        }
-        cout << endl;
-    }
+   #define print cout << setw(3)
+   print << '';
+   for(size_t column = 0; column < WIDTH; ++column) print << column + 1;
+   cout << endl;
+   for(size_t line = 0; line < HEIGHT; ++line)
+   {
+      print << line + 1;
+      for(size_t column = 0; column < WIDTH; ++column)
+      {
+          print << getDisplayChar(tab[line][column]);
+      }
+      cout << endl;
+   }
 }
 
 
 unsigned nbOfNeighbours(int line, int column, bool tab[HEIGHT][WIDTH])
 {
    unsigned neighbours = 0;
-   for (int l = -1; l <= 1; ++l)       //
-   {                                   //for all neighbours
-      for (int c = -1; c <= 1; ++c)    //
+   for (int lineShift = -1; lineShift <= 1; ++lineShift)             //
+   {                                                                 //for all neighbours
+      for (int columnShift = -1; columnShift <= 1; ++columnShift)    //
       {
-         if ( !(l == 0 && c == 0 ) &&                    //exluding self
-              line + l >= 0 && column + c >= 0 &&        //excluding underflow
-              line + l < HEIGHT && column + c < WIDTH )  //excluding overflow
+         if ( !(lineShift == 0 && columnShift == 0 ) &&                    //exluding self
+              line + lineShift >= 0 && column + columnShift >= 0 &&        //excluding underflow
+              line + lineShift < HEIGHT && column + columnShift < WIDTH )  //excluding overflow
          {
-            neighbours += (unsigned)tab[line - l][column - c];
+            neighbours += (unsigned)tab[line + lineShift][column + columnShift];
          }
       }
    }
    return neighbours;
+}
+
+char getDisplayChar(bool value)
+{
+    switch (value)
+    {
+      case ALIVE:
+         return 'X';
+      case DEAD:
+         return 'O';
+    }
+    return 'O';
 }
 
 /*
