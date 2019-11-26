@@ -8,9 +8,37 @@ unsigned nbOfNeighbours(int line, int column, bool tab[HEIGHT][WIDTH]);
 
 char getDisplayChar(bool value);
 
+
+
 void computeNextGen(bool tab[HEIGHT][WIDTH])
 {
+   bool temp[HEIGHT][WIDTH];
+   bool newValue;
+   unsigned neighbours;
+   
+   for (size_t line = 0; line < HEIGHT; ++line)
+   {
+      for (size_t column = 0; column < WIDTH; ++column)
+      {
+         neighbours = nbOfNeighbours(tab, line, column);
+         if (neighbours == 3)
+         {
+            newValue = ALIVE;
+         }
+         else if (neighbours == 2 && tab[line][column] == ALIVE)
+         {
+            newValue == ALIVE;
+         }
+         else
+         {
+            newValue = DEAD;
+         }
 
+         temp[line][column] = newValue;
+      }
+   }
+   
+   copy(temp, tab);
 }
 
 void displayGame(bool tab[HEIGHT][WIDTH])
