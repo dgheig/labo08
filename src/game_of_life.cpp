@@ -11,11 +11,12 @@ void copyTab(bool fromTab[HEIGHT][WIDTH], bool toTab[HEIGHT][WIDTH]);
 
 
 
-void computeNextGen(bool tab[HEIGHT][WIDTH])
+bool computeNextGen(bool tab[HEIGHT][WIDTH])
 {
    bool temp[HEIGHT][WIDTH];
    bool newValue;
    unsigned neighbours;
+   bool changeDetected = false;
    
    for (size_t line = 0; line < HEIGHT; ++line)
    {
@@ -35,15 +36,24 @@ void computeNextGen(bool tab[HEIGHT][WIDTH])
             newValue = DEAD;
          }
 
+         if (tab[line][column] != newValue)
+         {
+            changeDetected = true;
+         }
+
          temp[line][column] = newValue;
       }
    }
    
    #ifdef DEBUG
-
+   
+   
+   
    #endif
    
    copyTab(temp, tab);
+   
+   return changeDetected;
 }
 
 
