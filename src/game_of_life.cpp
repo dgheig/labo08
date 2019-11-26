@@ -11,11 +11,13 @@ char getDisplayChar(bool value);
 void copyTab(bool fromTab[HEIGHT][WIDTH], bool toTab[HEIGHT][WIDTH]);
 
 
-void computeNextGen(bool tab[HEIGHT][WIDTH])
+
+bool computeNextGen(bool tab[HEIGHT][WIDTH])
 {
    bool newGen[HEIGHT][WIDTH];
    bool newValue;
    unsigned neighbours;
+   bool changeDetected = false;
 
    for (size_t line = 0; line < HEIGHT; ++line)
    {
@@ -35,18 +37,30 @@ void computeNextGen(bool tab[HEIGHT][WIDTH])
             newValue = DEAD;
          }
 
+         if (tab[line][column] != newValue)
+         {
+            changeDetected = true;
+         }
+
          newGen[line][column] = newValue;
       }
    }
 
+   #ifdef DEBUG
+
+
+
+   #endif
 
    copyTab(newGen, tab);
+
+   return changeDetected;
 }
 
 
-void computeMultipleGens(unsigned n, bool tab[HEIGHT][WIDTH])
+void computeMultipleGens(bool tab[HEIGHT][WIDTH], unsigned n)
 {
-    for(int iteration = 0; iteration < n; ++iteration)
+    for(unsigned iteration = 0; iteration < n; ++iteration)
     {
         computeNextGen(tab);
         displayGame(tab);
