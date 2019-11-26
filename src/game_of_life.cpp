@@ -28,7 +28,7 @@ void computeNextGen(bool tab[HEIGHT][WIDTH])
          }
          else if (neighbours == 2 && tab[line][column] == ALIVE)
          {
-            newValue == ALIVE;
+            newValue = ALIVE;
          }
          else
          {
@@ -43,7 +43,7 @@ void computeNextGen(bool tab[HEIGHT][WIDTH])
 
    #endif
    
-   copy(temp, tab);
+   copyTab(temp, tab);
 }
 
 
