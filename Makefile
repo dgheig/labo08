@@ -16,7 +16,7 @@ TESTS = tests
 
 all: main compile_tests
 
-compile_tests:
+compile_tests: display_game
 
 documentation:
 	mkdir -p doc && cd doc && mkdir -p doxy && doxygen Doxyfile && make -C doxy/latex && cp doxy/latex/refman.pdf doc.pdf
@@ -35,5 +35,6 @@ game_of_life.o: setup $(SRC)/game_of_life.h $(SRC)/game_of_life.cpp
 main: setup game_of_life.o labo_08_gachet_jean_gallay_david.cpp
 	$(COMPILE) $(SRC)/game_of_life.h $(OBJ)/game_of_life.o labo_08_gachet_jean_gallay_david.cpp -o $(BUILDS)/labo08
 
-# is_date_valid: $(TESTS)/is_date_valid.cpp utilities.o
-# 	$(COMPILE) src/utilities.h $(OBJ)/utilities.o $(TESTS)/is_date_valid.cpp -o $(BUILDS)/is_date_valid
+# TESTS
+display_game: $(TESTS)/display_game.cpp game_of_life.o
+	$(COMPILE) src/game_of_life.h $(OBJ)/game_of_life.o $(TESTS)/display_game.cpp -o $(BUILDS)/display_game

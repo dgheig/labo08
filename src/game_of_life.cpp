@@ -56,7 +56,7 @@ unsigned nbOfNeighbours(int line, int column, bool tab[HEIGHT][WIDTH])
 }
 
 /*
-unsigned nbOfNeighbours(int line, int column, bool tab[HEIGHT][WIDTH])
+unsigned nbOfNeighbours(size_t line, size_t column, bool tab[HEIGHT][WIDTH])
 {
     unsigned neigbhours = 0;
     if(line < HEIGHT - 1 and tab[line + 1][column] == ALIVE) {

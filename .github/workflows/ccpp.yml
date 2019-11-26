@@ -29,5 +29,5 @@ jobs:
     - uses: actions/checkout@master
     - name: compile tests
       run: make compile_tests
-    # - name: test is_date_valid
-    #   run: ./builds/is_date_valid
+    - name: test display_game
+      run: ./builds/display_game
