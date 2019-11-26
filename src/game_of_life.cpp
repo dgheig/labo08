@@ -1,6 +1,19 @@
 #include "game_of_life.h"
+#include <iostream>
+#include <iomanip>
 
 using namespace std;
+
+char get_display_char(bool value) {
+    switch (value)
+    {
+    case ALIVE:
+        return 'X';
+    case DEAD:
+        return 'O';
+    }
+    return 'O';
+}
 
 void computeNextGen(bool tab[HEIGHT][WIDTH])
 {
@@ -9,7 +22,18 @@ void computeNextGen(bool tab[HEIGHT][WIDTH])
 
 void displayGame(bool tab[HEIGHT][WIDTH])
 {
-
+    #define print std::cout << setw(3)
+    using std::endl;
+    for(size_t column = 0; column < WIDTH; ++column) print << column;
+    cout << endl;
+    for(size_t line = 0; line < HEIGHT; ++line)
+    {
+        print << line;
+        for(size_t column = 0; column < WIDTH; ++column)
+        {
+            print << get_display_char(tab[line][column]);
+        }
+    }
 }
 
 
