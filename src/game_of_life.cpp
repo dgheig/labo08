@@ -73,11 +73,11 @@ void computeMultipleGens(bool tab[HEIGHT][WIDTH], unsigned n)
 void displayGame(bool tab[HEIGHT][WIDTH])
 {
    print << ' ';
-   for(size_t column = 0; column < WIDTH; ++column) print << column + 1;
+   for(size_t column = 0; column < WIDTH; ++column) print << column;
    cout << endl;
    for(size_t line = 0; line < HEIGHT; ++line)
    {
-      print << line + 1;
+      print << line;
       for(size_t column = 0; column < WIDTH; ++column)
       {
           print << getDisplayChar(tab[line][column]);

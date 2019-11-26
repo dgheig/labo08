@@ -1,8 +1,8 @@
 #ifndef GAME_OF_LIFE_H
 #define GAME_OF_LIFE_H
 
-#define HEIGHT 8
-#define WIDTH 8
+#define HEIGHT 9
+#define WIDTH 9
 #define ALIVE true
 #define DEAD false
 #define ALIVE_CHAR 'X'
@@ -16,8 +16,9 @@
 bool computeNextGen(bool tab[HEIGHT][WIDTH]);
 
 /**
- * Take a game and computes the n next generations.
- * @param tab 
+ * Take a game and computes the n next generations (stops if a stable state is reached).
+ * Displays the game after each generation.
+ * @param tab [IN]current state of the game, modified to the new state of the game
  * @param n
  */
 void computeMultipleGens(bool tab[HEIGHT][WIDTH], unsigned n);
