@@ -11,10 +11,9 @@ char getDisplayChar(bool value);
 void copyTab(bool fromTab[HEIGHT][WIDTH], bool toTab[HEIGHT][WIDTH]);
 
 
-
 void computeNextGen(bool tab[HEIGHT][WIDTH])
 {
-   bool temp[HEIGHT][WIDTH];
+   bool newGen[HEIGHT][WIDTH];
    bool newValue;
    unsigned neighbours;
 
@@ -36,15 +35,12 @@ void computeNextGen(bool tab[HEIGHT][WIDTH])
             newValue = DEAD;
          }
 
-         temp[line][column] = newValue;
+         newGen[line][column] = newValue;
       }
    }
 
-   #ifdef DEBUG
 
-   #endif
-
-   copyTab(temp, tab);
+   copyTab(newGen, tab);
 }
 
 
