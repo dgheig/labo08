@@ -5,6 +5,8 @@
 #define WIDTH 8
 #define ALIVE true
 #define DEAD false
+#define ALIVE_CHAR 'X'
+#define DEAD_CHAR 'O'
 
 void computeNextGen(bool tab[HEIGHT][WIDTH]);
 

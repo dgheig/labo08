@@ -97,11 +97,11 @@ char getDisplayChar(bool value)
     switch (value)
     {
       case ALIVE:
-         return 'X';
+         return ALIVE_CHAR;
       case DEAD:
-         return 'O';
+         return DEAD_CHAR;
     }
-    return 'O';
+    return DEAD_CHAR;
 }
 
 
