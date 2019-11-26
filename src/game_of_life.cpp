@@ -40,17 +40,22 @@ bool computeNextGen(bool tab[HEIGHT][WIDTH])
          if (tab[line][column] != newValue)
          {
             changeDetected = true;
+				#ifdef DEBUG
+					if(newValue == ALIVE)
+						cout << "tab[" << line << "][" << column << "] = " << neighbours << " => naissance" << endl;
+					else
+						cout << "tab[" << line << "][" << column << "] = " << neighbours << " => mort" << endl;
+				#endif
          }
+			#ifdef DEBUG
+				else if(newValue == ALIVE)
+					cout << "tab[" << line << "][" << column << "] = " << neighbours << " => survie" << endl;
+			#endif
 
          newGen[line][column] = newValue;
       }
    }
 
-   #ifdef DEBUG
-
-
-
-   #endif
 
    copyTab(newGen, tab);
 
