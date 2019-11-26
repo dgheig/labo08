@@ -5,9 +5,27 @@
 using namespace std;
 #define print cout << setw(3)
 
+/**
+ * Compute the number of neighbours of a cell.
+ * @param tab game
+ * @param line cell's line
+ * @param column cell's column
+ * @return 
+ */
 unsigned nbOfNeighbours(bool tab[HEIGHT][WIDTH], int line, int column);
 
+/**
+ * Returns the char to display depending on the cell state.
+ * @param value cell state
+ * @return char to display
+ */
 char getDisplayChar(bool value);
+
+/**
+ * Copys the first tab into the second tab.
+ * @param fromTab origin tab
+ * @param toTab target tab
+ */
 void copyTab(bool fromTab[HEIGHT][WIDTH], bool toTab[HEIGHT][WIDTH]);
 
 
@@ -65,21 +83,24 @@ bool computeNextGen(bool tab[HEIGHT][WIDTH])
 
 void computeMultipleGens(bool tab[HEIGHT][WIDTH], unsigned n)
 {
-    for(unsigned iteration = 0; iteration < n; ++iteration)
-    {
-        computeNextGen(tab);
-        displayGame(tab);
-    }
+   for(unsigned iteration = 0; iteration < n; ++iteration)
+   {
+      if (!computeNextGen(tab))
+      {
+         return;
+      }
+      displayGame(tab);
+   }
 }
 
-void displayGame(bool tab[HEIGHT][WIDTH])
+void displayGame(const bool tab[HEIGHT][WIDTH])
 {
    print << ' ';
-   for(size_t column = 0; column < WIDTH; ++column) print << column + 1;
+   for(size_t column = 0; column < WIDTH; ++column) print << column;
    cout << endl;
    for(size_t line = 0; line < HEIGHT; ++line)
    {
-      print << line + 1;
+      print << line;
       for(size_t column = 0; column < WIDTH; ++column)
       {
           print << getDisplayChar(tab[line][column]);
