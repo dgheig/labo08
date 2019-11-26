@@ -4,9 +4,10 @@
 
 using namespace std;
 
-unsigned nbOfNeighbours(int line, int column, bool tab[HEIGHT][WIDTH]);
+unsigned nbOfNeighbours(bool tab[HEIGHT][WIDTH], int line, int column);
 
 char getDisplayChar(bool value);
+void copyTab(bool fromTab[HEIGHT][WIDTH], bool toTab[HEIGHT][WIDTH]);
 
 
 
@@ -38,13 +39,27 @@ void computeNextGen(bool tab[HEIGHT][WIDTH])
       }
    }
    
+   #ifdef DEBUG
+
+   #endif
+   
    copy(temp, tab);
+}
+
+
+void computeMultipleGens(unsigned n, bool tab[HEIGHT][WIDTH])
+{
+    for(int iteration = 0; iteration < n; ++iteration)
+    {
+        computeNextGen(tab);
+        displayGame(tab);
+    }
 }
 
 void displayGame(bool tab[HEIGHT][WIDTH])
 {
    #define print cout << setw(3)
-   print << '';
+   print << ' ';
    for(size_t column = 0; column < WIDTH; ++column) print << column + 1;
    cout << endl;
    for(size_t line = 0; line < HEIGHT; ++line)
@@ -59,7 +74,7 @@ void displayGame(bool tab[HEIGHT][WIDTH])
 }
 
 
-unsigned nbOfNeighbours(int line, int column, bool tab[HEIGHT][WIDTH])
+unsigned nbOfNeighbours(bool tab[HEIGHT][WIDTH], int line, int column)
 {
    unsigned neighbours = 0;
    for (int lineShift = -1; lineShift <= 1; ++lineShift)             //
@@ -87,6 +102,18 @@ char getDisplayChar(bool value)
          return 'O';
     }
     return 'O';
+}
+
+
+void copyTab(bool fromTab[HEIGHT][WIDTH], bool toTab[HEIGHT][WIDTH])
+{
+   for(size_t line = 0; line < HEIGHT; ++line)
+   {
+      for(size_t column = 0; column < WIDTH; ++column)
+      {
+          toTab[line][column] = fromTab[line][column];
+      }
+   }
 }
 
 /*
