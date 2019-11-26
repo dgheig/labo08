@@ -9,7 +9,7 @@ void computeNextGen(bool tab[HEIGHT][WIDTH])
 
 void displayGame(bool tab[HEIGHT][WIDTH])
 {
-   
+
 }
 
 
@@ -30,3 +30,22 @@ unsigned nbOfNeighbours(int line, int column, bool tab[HEIGHT][WIDTH])
    }
    return neighbours;
 }
+
+/*
+unsigned nbOfNeighbours(int line, int column, bool tab[HEIGHT][WIDTH])
+{
+    unsigned neigbhours = 0;
+    if(line < HEIGHT - 1 and tab[line + 1][column] == ALIVE) {
+        ++neigbhours;
+    }
+    if(line > 1 and tab[line - 1][column] == ALIVE) {
+        ++neigbhours;
+    }
+    if(column < WIDTH - 1 and tab[line][column + 1] == ALIVE) {
+        ++neigbhours;
+    }
+    if(line > 1 and tab[line][column - 1] == ALIVE) {
+        ++neigbhours;
+    }
+    return neigbhours;
+}*/
