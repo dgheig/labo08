@@ -22,8 +22,10 @@ void computeNextGen(bool tab[HEIGHT][WIDTH])
 
 void displayGame(bool tab[HEIGHT][WIDTH])
 {
-    #define print std::cout << setw(3)
+
+    using std::cout;
     using std::endl;
+    #define print cout << setw(3)
     for(size_t column = 0; column < WIDTH; ++column) print << column;
     cout << endl;
     for(size_t line = 0; line < HEIGHT; ++line)
@@ -33,6 +35,7 @@ void displayGame(bool tab[HEIGHT][WIDTH])
         {
             print << get_display_char(tab[line][column]);
         }
+        cout << endl;
     }
 }
 
