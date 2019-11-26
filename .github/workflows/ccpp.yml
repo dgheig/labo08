@@ -31,3 +31,18 @@ jobs:
       run: make compile_tests
     - name: test display_game
       run: ./builds/display_game
+    - name: test compute_multiple_gens
+      run: ./builds/compute_multiple_gens
+
+  debug_tests:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+    - name: compile tests DEBUG=1
+      run: make compile_tests
+    - name: test display_game
+      run: ./builds/display_game
+    - name: test compute_multiple_gens
+      run: ./builds/compute_multiple_gens
