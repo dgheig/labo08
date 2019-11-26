@@ -8,7 +8,7 @@
 
 void computeNextGen(bool tab[HEIGHT][WIDTH]);
 
-void computeMultipleGens(unsigned n, bool tab[HEIGHT][WIDTH]);
+void computeMultipleGens(bool tab[HEIGHT][WIDTH], unsigned n);
 
 void displayGame(bool tab[HEIGHT][WIDTH]);
 

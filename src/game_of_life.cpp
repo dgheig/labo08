@@ -47,9 +47,9 @@ void computeNextGen(bool tab[HEIGHT][WIDTH])
 }
 
 
-void computeMultipleGens(unsigned n, bool tab[HEIGHT][WIDTH])
+void computeMultipleGens(bool tab[HEIGHT][WIDTH], unsigned n)
 {
-    for(int iteration = 0; iteration < n; ++iteration)
+    for(unsigned iteration = 0; iteration < n; ++iteration)
     {
         computeNextGen(tab);
         displayGame(tab);
