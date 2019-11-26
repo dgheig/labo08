@@ -70,7 +70,7 @@ void computeMultipleGens(bool tab[HEIGHT][WIDTH], unsigned n)
    }
 }
 
-void displayGame(bool tab[HEIGHT][WIDTH])
+void displayGame(const bool tab[HEIGHT][WIDTH])
 {
    print << ' ';
    for(size_t column = 0; column < WIDTH; ++column) print << column;
