@@ -61,7 +61,7 @@ bool computeNextGen(bool currentGen[HEIGHT][WIDTH])
             changeDetected = true;
             
             #ifdef DEBUG
-            if(newValue == ALIVE)
+            if(newGen[line][column] == ALIVE)
                cout << "tab[" << line << "][" << column << "] = "
                     << neighbours << " => naissance" << endl;
             else
@@ -72,7 +72,7 @@ bool computeNextGen(bool currentGen[HEIGHT][WIDTH])
          }
          
          #ifdef DEBUG
-         else if(newValue == ALIVE)
+         else if(newGen[line][column] == ALIVE)
             cout << "tab[" << line << "][" << column << "] = "
                  << neighbours << " => survie" << endl;
          #endif
