@@ -130,17 +130,18 @@ unsigned nbOfNeighbours(bool game[HEIGHT][WIDTH], int line, int column)
 
 unsigned nbOfNeighbours(bool game[HEIGHT][WIDTH], int line, int column)
 {
-   unsigned neighbours = 0;
-   unsigned lineStart = line - 1 > 0 ? line - 1 : 0; // MAX
-   unsigned lineStop = line + 1 < HEIGHT - 1 ? line + 1 : HEIGHT - 1; // MIN
-   unsigned columnStart = column - 1 > 0 ? column - 1 : 0; // MAX
-   unsigned columnStop = column + 1 < WIDTH - 1 ? column + 1 : WIDTH - 1; // MIN
+   size_t neighbours = 0;
+   size_t lineStart = line - 1 > 0 ? line - 1 : 0; // MAX
+   size_t lineStop = line + 1 < HEIGHT - 1 ? line + 1 : HEIGHT - 1; // MIN
+   size_t columnStart = column - 1 > 0 ? column - 1 : 0; // MAX
+   size_t columnStop = column + 1 < WIDTH - 1 ? column + 1 : WIDTH - 1; // MIN
 
-   for (int lineIndex = lineStart ; lineIndex <= lineStop; ++lineIndex)
+   for (size_t lineIndex = lineStart ; lineIndex <= lineStop; ++lineIndex)
    {
-      for (int columnIndex = columnStart; columnIndex <= columnStop; ++columnIndex)
+      for (size_t columnIndex = columnStart; columnIndex <= columnStop; ++columnIndex)
       {
-         neighbours += (unsigned)game[lineIndex][columnIndex];
+         if(game[lineIndex][columnIndex] == ALIVE)
+	    ++neighbours;
       }
    }
    if(game[line][column] == ALIVE) --neighbours;
