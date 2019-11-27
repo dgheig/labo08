@@ -109,7 +109,7 @@ void displayGame(const bool game[HEIGHT][WIDTH])
    }
 }
 
-
+/*
 unsigned nbOfNeighbours(bool game[HEIGHT][WIDTH], int line, int column)
 {
    unsigned neighbours = 0;
@@ -126,8 +126,26 @@ unsigned nbOfNeighbours(bool game[HEIGHT][WIDTH], int line, int column)
    }
    if(game[line][column] == ALIVE) --neighbours;
    return neighbours;
-}
+}*/
 
+unsigned nbOfNeighbours(bool game[HEIGHT][WIDTH], int line, int column)
+{
+   unsigned neighbours = 0;
+   unsigned lineStart = MAX(0, line - 1)
+   unsigned lineStop = MIN(HEIGHT - 1, line + 1)
+   unsigned columnStart = MAX(0, column - 1)
+   unsigned columnStop = MIN(WIDTH - 1, column + 1)
+
+   for (int lineIndex = lineStart ; lineIndex <= lineStop; ++lineIndex)
+   {
+      for (int columnIndex = columnStart; columnIndex <= columnStop; ++columnIndex)
+      {
+         neighbours += (unsigned)game[lineIndex][columnIndex];
+      }
+   }
+   if(game[line][column] == ALIVE) --neighbours;
+   return neighbours;
+}
 char getDisplayChar(bool value)
 {
     switch (value)
