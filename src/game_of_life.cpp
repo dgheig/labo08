@@ -134,7 +134,7 @@ unsigned nbOfNeighbours(bool game[HEIGHT][WIDTH], int line, int column)
    unsigned lineStart = line - 1 > 0 ? line - 1 : 0; // MAX
    unsigned lineStop = line + 1 < HEIGHT - 1 ? line + 1 : HEIGHT - 1; // MIN
    unsigned columnStart = column - 1 > 0 ? column - 1 : 0; // MAX
-   unsigned columnStop = column + 1 < WIDTH - 1 ? column + 1 : WIDTH - 1; MIN(WIDTH - 1, column + 1); // MIN
+   unsigned columnStop = column + 1 < WIDTH - 1 ? column + 1 : WIDTH - 1; // MIN
 
    for (int lineIndex = lineStart ; lineIndex <= lineStop; ++lineIndex)
    {
