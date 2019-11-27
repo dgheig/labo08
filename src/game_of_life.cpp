@@ -131,10 +131,10 @@ unsigned nbOfNeighbours(bool game[HEIGHT][WIDTH], int line, int column)
 unsigned nbOfNeighbours(bool game[HEIGHT][WIDTH], int line, int column)
 {
    unsigned neighbours = 0;
-   unsigned lineStart = MAX(0, line - 1)
-   unsigned lineStop = MIN(HEIGHT - 1, line + 1)
-   unsigned columnStart = MAX(0, column - 1)
-   unsigned columnStop = MIN(WIDTH - 1, column + 1)
+   unsigned lineStart = MAX(0, line - 1);
+   unsigned lineStop = MIN(HEIGHT - 1, line + 1);
+   unsigned columnStart = MAX(0, column - 1);
+   unsigned columnStop = MIN(WIDTH - 1, column + 1);
 
    for (int lineIndex = lineStart ; lineIndex <= lineStop; ++lineIndex)
    {
