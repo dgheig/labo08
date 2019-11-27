@@ -117,14 +117,14 @@ unsigned nbOfNeighbours(bool tab[HEIGHT][WIDTH], int line, int column)
    {                                                                 //for all neighbours
       for (int columnShift = -1; columnShift <= 1; ++columnShift)    //
       {
-         if ( !(lineShift == 0 && columnShift == 0 ) &&                    //exluding self
-              line + lineShift >= 0 && column + columnShift >= 0 &&        //excluding underflow
+         if ( line + lineShift >= 0 && column + columnShift >= 0 &&        //excluding underflow
               line + lineShift < HEIGHT && column + columnShift < WIDTH )  //excluding overflow
          {
             neighbours += (unsigned)tab[line + lineShift][column + columnShift];
          }
       }
    }
+   if(tab[line][column] == ALIVE) --neighbours;
    return neighbours;
 }
 
