@@ -7,12 +7,12 @@ using namespace std;
 
 /**
  * Compute the number of neighbours of a cell.
- * @param tab game
+ * @param game
  * @param line cell's line
  * @param column cell's column
  * @return 
  */
-unsigned nbOfNeighbours(bool tab[HEIGHT][WIDTH], int line, int column);
+unsigned nbOfNeighbours(bool game[HEIGHT][WIDTH], int line, int column);
 
 /**
  * Returns the char to display depending on the cell state.
@@ -30,7 +30,7 @@ void copyTab(bool fromTab[HEIGHT][WIDTH], bool toTab[HEIGHT][WIDTH]);
 
 
 
-bool computeNextGen(bool tab[HEIGHT][WIDTH])
+bool computeNextGen(bool currentGen[HEIGHT][WIDTH])
 {
    bool newGen[HEIGHT][WIDTH];
    bool newValue;
@@ -41,12 +41,12 @@ bool computeNextGen(bool tab[HEIGHT][WIDTH])
    {
       for (size_t column = 0; column < WIDTH; ++column)
       {
-         neighbours = nbOfNeighbours(tab, line, column);
+         neighbours = nbOfNeighbours(currentGen, line, column);
          if (neighbours == 3)
          {
             newValue = ALIVE;
          }
-         else if (neighbours == 2 && tab[line][column] == ALIVE)
+         else if (neighbours == 2 && currentGen[line][column] == ALIVE)
          {
             newValue = ALIVE;
          }
@@ -55,7 +55,7 @@ bool computeNextGen(bool tab[HEIGHT][WIDTH])
             newValue = DEAD;
          }
 
-         if (tab[line][column] != newValue)
+         if (currentGen[line][column] != newValue)
          {
             changeDetected = true;
 				#ifdef DEBUG
@@ -75,25 +75,25 @@ bool computeNextGen(bool tab[HEIGHT][WIDTH])
    }
 
 
-   copyTab(newGen, tab);
+   copyTab(newGen, currentGen);
 
    return changeDetected;
 }
 
 
-void computeMultipleGens(bool tab[HEIGHT][WIDTH], unsigned n)
+void computeMultipleGens(bool currentGen[HEIGHT][WIDTH], unsigned n)
 {
    for(unsigned iteration = 0; iteration < n; ++iteration)
    {
-      if (!computeNextGen(tab))
+      if (!computeNextGen(currentGen))
       {
          return;
       }
-      displayGame(tab);
+      displayGame(currentGen);
    }
 }
 
-void displayGame(const bool tab[HEIGHT][WIDTH])
+void displayGame(const bool game[HEIGHT][WIDTH])
 {
    print << ' ';
    for(size_t column = 0; column < WIDTH; ++column) print << column;
@@ -103,14 +103,14 @@ void displayGame(const bool tab[HEIGHT][WIDTH])
       print << line;
       for(size_t column = 0; column < WIDTH; ++column)
       {
-          print << getDisplayChar(tab[line][column]);
+          print << getDisplayChar(game[line][column]);
       }
       cout << endl;
    }
 }
 
 
-unsigned nbOfNeighbours(bool tab[HEIGHT][WIDTH], int line, int column)
+unsigned nbOfNeighbours(bool game[HEIGHT][WIDTH], int line, int column)
 {
    unsigned neighbours = 0;
    for (int lineShift = -1; lineShift <= 1; ++lineShift)             //
@@ -120,11 +120,11 @@ unsigned nbOfNeighbours(bool tab[HEIGHT][WIDTH], int line, int column)
          if ( line + lineShift >= 0 && column + columnShift >= 0 &&        //excluding underflow
               line + lineShift < HEIGHT && column + columnShift < WIDTH )  //excluding overflow
          {
-            neighbours += (unsigned)tab[line + lineShift][column + columnShift];
+            neighbours += (unsigned)game[line + lineShift][column + columnShift];
          }
       }
    }
-   if(tab[line][column] == ALIVE) --neighbours;
+   if(game[line][column] == ALIVE) --neighbours;
    return neighbours;
 }
 
