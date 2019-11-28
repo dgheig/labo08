@@ -8,6 +8,8 @@
 #define ALIVE_CHAR 'X'
 #define DEAD_CHAR ' '
 
+#define DEBUG
+
 /**
  * Take a game and computes the next generation.
  * @param currentGen [IN]  current state of the game
@@ -22,8 +24,9 @@ bool computeNextGen(bool currentGen[HEIGHT][WIDTH]);
  * @param currentGen [IN]  current state of the game
  *                   [OUT] new state of the game
  * @param n   number of generations to compute
+ * @param autoStop stops if no more changes are detected between generations
  */
-void computeMultipleGens(bool currentGen[HEIGHT][WIDTH], unsigned n);
+void computeMultipleGens(bool currentGen[HEIGHT][WIDTH], unsigned n, bool autoStop = true);
 
 /**
  * Display the game.
