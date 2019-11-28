@@ -7,6 +7,8 @@ ifdef DEBUG
 	FLAGS += -DDEBUG
 endif
 
+SFML = -lsfml-graphics -lsfml-window -lsfml-system
+
 COMPILE = $(GXX) $(STD) $(FLAGS)
 
 SRC = src
@@ -41,3 +43,11 @@ display_game: $(TESTS)/display_game.cpp game_of_life.o
 
 compute_multiple_gens: $(TESTS)/compute_multiple_gens.cpp game_of_life.o
 	$(COMPILE) src/game_of_life.h $(OBJ)/game_of_life.o $(TESTS)/compute_multiple_gens.cpp -o $(BUILDS)/compute_multiple_gens
+
+# EXTRA
+
+sfml.o: extra/sfml.cpp
+	$(COMPILE) -c extra/sfml.cpp -o $(OBJ)/sfml.o
+
+sfml: setup game_of_life.o sfml.o
+	$(COMPILE) $(SRC)/game_of_life.h $(OBJ)/game_of_life.o $(OBJ)/sfml.o -o $(BUILDS)/sfml $(SFML)

@@ -11,7 +11,7 @@ using namespace std;
  * @param game
  * @param line cell's line
  * @param column cell's column
- * @return 
+ * @return
  */
 unsigned nbOfNeighbours(bool game[HEIGHT][WIDTH], int line, int column);
 
@@ -40,7 +40,7 @@ bool computeNextGen(bool currentGen[HEIGHT][WIDTH])
       for (size_t column = 0; column < WIDTH; ++column)
       {
          neighbours = nbOfNeighbours(currentGen, line, column);
-         
+
          //new state of cell
          if (neighbours == 3)
          {
@@ -59,7 +59,7 @@ bool computeNextGen(bool currentGen[HEIGHT][WIDTH])
          if (currentGen[line][column] != newGen[line][column])
          {
             changeDetected = true;
-            
+
             #ifdef DEBUG
             if(newGen[line][column] == ALIVE)
                cout << "tab[" << line << "][" << column << "] = "
@@ -70,7 +70,7 @@ bool computeNextGen(bool currentGen[HEIGHT][WIDTH])
             #endif
 
          }
-         
+
          #ifdef DEBUG
          else if(newGen[line][column] == ALIVE)
             cout << "tab[" << line << "][" << column << "] = "
@@ -89,12 +89,8 @@ bool computeNextGen(bool currentGen[HEIGHT][WIDTH])
 void computeMultipleGens(bool currentGen[HEIGHT][WIDTH], unsigned n)
 {
    //computes and displays n generations
-   for(unsigned iteration = 0; iteration < n; ++iteration)
+   for(unsigned iteration = 0; iteration < n and computeNextGen(currentGen); ++iteration)
    {
-      if (!computeNextGen(currentGen))
-      {
-         return;  //stops if no more changes are detected
-      }
       displayGame(currentGen);
    }
 }
@@ -108,7 +104,7 @@ void displayGame(const bool game[HEIGHT][WIDTH])
       print << column;
    }
    cout << endl;
-   
+
    //display of each line with line number
    for(size_t line = 0; line < HEIGHT; ++line)
    {
@@ -124,7 +120,7 @@ void displayGame(const bool game[HEIGHT][WIDTH])
 unsigned nbOfNeighbours(bool game[HEIGHT][WIDTH], int line, int column)
 {
    unsigned neighbours = 0;   //nb of neighbours
-   
+
    //boundaries of neighbours indexes
    size_t lineStart   = line - 1   > 0          ? line - 1   : 0;          // MAX
    size_t lineStop    = line + 1   < HEIGHT - 1 ? line + 1   : HEIGHT - 1; // MIN
@@ -140,22 +136,22 @@ unsigned nbOfNeighbours(bool game[HEIGHT][WIDTH], int line, int column)
 	    ++neighbours;
       }
    }
-   
+
    if(game[line][column] == ALIVE) --neighbours;   //adjustment for self
-   
+
    return neighbours;
 }
 
 char getDisplayChar(bool value)
 {
-    switch (value)
-    {
-      case ALIVE:
-         return ALIVE_CHAR;
-      case DEAD:
-         return DEAD_CHAR;
-    }
-    return DEAD_CHAR;
+   switch (value)
+   {
+   case ALIVE:
+      return ALIVE_CHAR;
+   case DEAD:
+      return DEAD_CHAR;
+   }
+   return DEAD_CHAR;
 }
 
 void copyTab(bool fromArray[HEIGHT][WIDTH], bool toArray[HEIGHT][WIDTH])
