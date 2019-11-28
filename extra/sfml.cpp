@@ -7,30 +7,15 @@ using namespace std;
 #define RECT_WIDTH  RECT_HEIGHT
 #define BORDER 3
 
-struct Rendering {
-   sf::RenderWindow* window;
-   sf::RectangleShape* alive;
-   sf::RectangleShape* dead;
-};
+sf::RenderWindow window (sf::VideoMode(RECT_HEIGHT * HEIGHT, RECT_WIDTH * WIDTH), "My window");
+sf::RectangleShape alive (sf::Vector2f(RECT_HEIGHT, RECT_WIDTH));
+sf::RectangleShape dead (sf::Vector2f(RECT_HEIGHT, RECT_WIDTH));
 
-Rendering initializeRendering(Rendering& rendering)
-{
-   rendering.window = new sf::RenderWindow(sf::VideoMode(RECT_HEIGHT * HEIGHT, RECT_WIDTH * WIDTH), "My window");
-   rendering.alive = new sf::RectangleShape(sf::Vector2f(RECT_HEIGHT, RECT_WIDTH));
-   rendering.dead = new sf::RectangleShape(sf::Vector2f(RECT_HEIGHT, RECT_WIDTH));
 
-   rendering.alive->setFillColor(sf::Color::Red);
-   rendering.dead->setFillColor(sf::Color::White);
-   rendering.alive->setOutlineColor(sf::Color::Black);
-   rendering.dead->setOutlineColor(sf::Color::Black);
-   rendering.alive->setOutlineThickness(BORDER);
-   rendering.dead->setOutlineThickness(BORDER);
-}
-
-void display(bool currentGen[HEIGHT][WIDTH], Rendering rendering)
+void display(bool currentGen[HEIGHT][WIDTH])
 {
 
-   rendering.window->clear(sf::Color::White);
+   window.clear(sf::Color::White);
    //display of each line with line number
    for(size_t line = 0; line < HEIGHT; ++line)
    {
@@ -82,7 +67,12 @@ void wait()
 
 int main()
 {
-   Rendering rendering;
+   alive.setFillColor(sf::Color::Red);
+   dead.setFillColor(sf::Color::White);
+   alive.setOutlineColor(sf::Color::Black);
+   dead.setOutlineColor(sf::Color::Black);
+   alive.setOutlineThickness(BORDER);
+   dead.setOutlineThickness(BORDER);
    int n = 100;
    bool currentGen[HEIGHT][WIDTH];
    preFillGame(currentGen);
