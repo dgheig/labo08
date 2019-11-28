@@ -16,7 +16,7 @@ OBJ = obj
 BUILDS = builds
 TESTS = tests
 
-all: main compile_tests
+all: labo08 compile_tests
 
 compile_tests: display_game compute_multiple_gens
 
@@ -34,8 +34,11 @@ setup: build_dir obj_dir
 game_of_life.o: setup $(SRC)/game_of_life.h $(SRC)/game_of_life.cpp
 	$(COMPILE) -c $(SRC)/game_of_life.cpp -o $(OBJ)/game_of_life.o
 
-main: setup game_of_life.o labo_08_gachet_jean_gallay_david.cpp
-	$(COMPILE) $(SRC)/game_of_life.h $(OBJ)/game_of_life.o labo_08_gachet_jean_gallay_david.cpp -o $(BUILDS)/labo08
+labo08.o: setup game_of_life.o labo_08_gachet_jean_gallay_david.cpp
+	$(COMPILE) -c labo_08_gachet_jean_gallay_david.cpp -o $(OBJ)/labo08.o
+
+labo08: setup game_of_life.o labo08.o
+	$(COMPILE) $(SRC)/game_of_life.h $(OBJ)/game_of_life.o $(OBJ)/labo08.o -o $(BUILDS)/labo08
 
 # TESTS
 display_game: $(TESTS)/display_game.cpp game_of_life.o
