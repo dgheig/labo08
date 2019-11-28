@@ -16,9 +16,28 @@ Compilateur : MinGW-g++ 6.3.0 and g++ 7.4.0
 #include <cstdlib>
 #include "src/game_of_life.h"
 
+using namespace std;
+
+#define EMPTY_BUFFER while(cin.get()!='\n')
+
 int main() {
    #ifdef DEBUG
-      std::cout << "Debug is active" << std::endl;
+      cout << "Debug is active" << endl;
    #endif
+
+   bool game[HEIGHT][WIDTH] = { { DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD  },
+                                { DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD  },
+                                { DEAD , DEAD , DEAD , DEAD , ALIVE, DEAD , DEAD , DEAD , DEAD  },
+                                { DEAD , DEAD , DEAD , ALIVE, ALIVE, ALIVE, DEAD , DEAD , DEAD  },
+                                { DEAD , DEAD , ALIVE, ALIVE, ALIVE, ALIVE, ALIVE, DEAD , DEAD  },
+                                { DEAD , DEAD , DEAD , ALIVE, ALIVE, ALIVE, DEAD , DEAD , DEAD  },
+                                { DEAD , DEAD , DEAD , DEAD , ALIVE, DEAD , DEAD , DEAD , DEAD  },
+                                { DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD  },
+                                { DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD  }};
+   
+   displayGame(game);
+   computeMultipleGens(game, 100);
+   
+   EMPTY_BUFFER;
    return EXIT_SUCCESS;
 }

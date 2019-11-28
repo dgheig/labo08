@@ -88,10 +88,14 @@ bool computeNextGen(bool currentGen[HEIGHT][WIDTH])
 
 void computeMultipleGens(bool currentGen[HEIGHT][WIDTH], unsigned n)
 {
+   bool computeNext = true;   //continue computation only if changes are still happening
+   
    //computes and displays n generations
-   for(unsigned iteration = 0; iteration < n and computeNextGen(currentGen); ++iteration)
+   for(unsigned iteration = 0; iteration < n && computeNext; ++iteration)
    {
+      computeNext = computeNextGen(currentGen);
       displayGame(currentGen);
+      cout << endl;
    }
 }
 
