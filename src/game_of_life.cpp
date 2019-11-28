@@ -27,7 +27,7 @@ char getDisplayChar(bool value);
  * @param fromArray origin array
  * @param toArray target array
  */
-void copyTab(bool fromArray[HEIGHT][WIDTH], bool toArray[HEIGHT][WIDTH]);
+void copyArray(bool fromArray[HEIGHT][WIDTH], bool toArray[HEIGHT][WIDTH]);
 
 bool computeNextGen(bool currentGen[HEIGHT][WIDTH])
 {
@@ -80,27 +80,27 @@ bool computeNextGen(bool currentGen[HEIGHT][WIDTH])
       }
    }
 
-   copyTab(newGen, currentGen);  //sets new state as current state
+   copyArray(newGen, currentGen);  //sets new state as current state
 
    return changeDetected;
 }
 
 
-void computeMultipleGens(bool currentGen[HEIGHT][WIDTH], unsigned n)
+void computeMultipleGens(bool currentGen[HEIGHT][WIDTH], unsigned n, bool autoStop)
 {
-   bool computeNext = true;   //continue computation only if changes are still happening
+   bool computeNext = true;   //changes are still happening
    
    //computes and displays n generations
    for(unsigned iteration = 0; iteration < n && computeNext; ++iteration)
    {
-      computeNext = computeNextGen(currentGen);
+      computeNext = computeNextGen(currentGen) || !autoStop;
       displayGame(currentGen);
-      cout << endl;
    }
 }
 
 void displayGame(const bool game[HEIGHT][WIDTH])
 {
+   cout << endl;
    //display of columns number
    print << ' ';
    for(size_t column = 0; column < WIDTH; ++column)
@@ -119,6 +119,7 @@ void displayGame(const bool game[HEIGHT][WIDTH])
       }
       cout << endl;
    }
+   cout << endl;
 }
 
 unsigned nbOfNeighbours(bool game[HEIGHT][WIDTH], int line, int column)
@@ -158,7 +159,7 @@ char getDisplayChar(bool value)
    return DEAD_CHAR;
 }
 
-void copyTab(bool fromArray[HEIGHT][WIDTH], bool toArray[HEIGHT][WIDTH])
+void copyArray(bool fromArray[HEIGHT][WIDTH], bool toArray[HEIGHT][WIDTH])
 {
    for(size_t line = 0; line < HEIGHT; ++line)
    {
