@@ -29,6 +29,17 @@ char getDisplayChar(bool value);
  */
 void copyTab(bool fromArray[HEIGHT][WIDTH], bool toArray[HEIGHT][WIDTH]);
 
+void preFillGame(bool game[HEIGHT][WIDTH])
+{
+   for(size_t line = 0; line < HEIGHT; ++line)
+   {
+      for(size_t column = 0; column < WIDTH; ++column)
+      {
+         game[line][column] = DEAD;
+      }
+   }
+}
+
 bool computeNextGen(bool currentGen[HEIGHT][WIDTH])
 {
    bool newGen[HEIGHT][WIDTH];
@@ -89,7 +100,7 @@ bool computeNextGen(bool currentGen[HEIGHT][WIDTH])
 void computeMultipleGens(bool currentGen[HEIGHT][WIDTH], unsigned n)
 {
    bool computeNext = true;   //continue computation only if changes are still happening
-   
+
    //computes and displays n generations
    for(unsigned iteration = 0; iteration < n && computeNext; ++iteration)
    {

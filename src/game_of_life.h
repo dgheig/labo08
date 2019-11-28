@@ -31,4 +31,6 @@ void computeMultipleGens(bool currentGen[HEIGHT][WIDTH], unsigned n);
  */
 void displayGame(const bool game[HEIGHT][WIDTH]);
 
+void preFillGame(bool game[HEIGHT][WIDTH]);
+
 #endif // GAME_OF_LIFE_H

@@ -18,20 +18,20 @@ int exit_value = EXIT_SUCCESS;
 
 int main() {
 
-	bool tab1[WIDTH][WIDTH] = {
+	bool game1[WIDTH][WIDTH] = {
 		{ALIVE, ALIVE, ALIVE, ALIVE},
 		{ALIVE, ALIVE, ALIVE}
 	};
 
-	bool tab2[WIDTH][WIDTH] = {
+	bool game2[WIDTH][WIDTH] = {
 		{ALIVE, ALIVE, ALIVE, ALIVE},
 		{ALIVE, ALIVE, ALIVE}
 	};
 
 
-	displayGame(tab1);
+	displayGame(game1);
 	cout << endl;
-	displayGame(tab2);
+	displayGame(game2);
 
 	return exit_value;
 }
