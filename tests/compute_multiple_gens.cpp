@@ -18,24 +18,26 @@ int exit_value = EXIT_SUCCESS;
 
 int main() {
 
-	bool tab[WIDTH][WIDTH];
 
-   tab[1][3] = ALIVE;
-   tab[2][2] = ALIVE;
-   tab[2][3] = ALIVE;
-   tab[2][4] = ALIVE;
-   tab[3][1] = ALIVE;
-   tab[3][2] = ALIVE;
-   tab[3][3] = ALIVE;
-   tab[3][4] = ALIVE;
-   tab[3][5] = ALIVE;
-   tab[4][2] = ALIVE;
-   tab[4][3] = ALIVE;
-   tab[4][4] = ALIVE;
-   tab[5][3] = ALIVE;
+	bool currentGen[HEIGHT][WIDTH];
+   preFillGame(currentGen);
 
-   displayGame(tab);
-   computeMultipleGens(tab, 5);
+   currentGen[2][4] = ALIVE;
+   currentGen[3][3] = ALIVE;
+   currentGen[3][4] = ALIVE;
+   currentGen[3][5] = ALIVE;
+   currentGen[4][2] = ALIVE;
+   currentGen[4][3] = ALIVE;
+   currentGen[4][4] = ALIVE;
+   currentGen[4][5] = ALIVE;
+   currentGen[4][6] = ALIVE;
+   currentGen[5][3] = ALIVE;
+   currentGen[5][4] = ALIVE;
+   currentGen[5][5] = ALIVE;
+   currentGen[6][4] = ALIVE;
+
+   displayGame(currentGen);
+   computeMultipleGens(currentGen, 700);
 
 	return exit_value;
 }
