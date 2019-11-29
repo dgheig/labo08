@@ -8,7 +8,6 @@
 #define ALIVE_CHAR 'X'
 #define DEAD_CHAR ' '
 
-#define DEBUG
 
 /**
  * Take a game and computes the next generation.
