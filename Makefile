@@ -18,6 +18,8 @@ TESTS = tests
 
 all: labo08 compile_tests
 
+main: labo08
+
 compile_tests: display_game compute_multiple_gens
 
 documentation:

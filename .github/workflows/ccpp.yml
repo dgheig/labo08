@@ -9,8 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
-    - name: compile main
-      run: make main
+    - name: compile labo08
+      run: make labo08
 
   debug_build:
 
@@ -18,8 +18,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
-    - name: compile main
-      run: make main DEBUG=1
+    - name: compile labo08
+      run: make labo08 DEBUG=1
 
   tests:
 
