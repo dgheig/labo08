@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['clear_5fbuffer',['CLEAR_BUFFER',['../utilities_8h.html#aa28dd17f6f34a0944a90f741b0251239',1,'utilities.h']]]
+  ['alive',['ALIVE',['../game__of__life_8h.html#ad8beef706da0344be19d59438fcdab6d',1,'game_of_life.h']]],
+  ['alive_5fchar',['ALIVE_CHAR',['../game__of__life_8h.html#af389ca69162561df905b9ed23fa1b439',1,'game_of_life.h']]]
 ];

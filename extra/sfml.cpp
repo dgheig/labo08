@@ -7,10 +7,22 @@ using namespace std;
 #define RECT_WIDTH  RECT_HEIGHT
 #define BORDER 3
 
+/*
+   This code was made in the quickiest way possible.
+   Its only purpose was to give a better visual representation
+   of what was happening and letting us trigger the compute of
+   the next generation using right arrow.
+
+   Please don't consider this code as a good example.
+
+   For the used librairie for graphics:
+   https://www.sfml-dev.org/index-fr.php
+*/
+
+
 sf::RenderWindow window (sf::VideoMode(RECT_HEIGHT * HEIGHT, RECT_WIDTH * WIDTH), "My window");
 sf::RectangleShape alive (sf::Vector2f(RECT_HEIGHT, RECT_WIDTH));
 sf::RectangleShape dead (sf::Vector2f(RECT_HEIGHT, RECT_WIDTH));
-
 
 void display(bool currentGen[HEIGHT][WIDTH])
 {

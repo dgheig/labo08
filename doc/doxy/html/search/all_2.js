@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['date_5fseparator',['DATE_SEPARATOR',['../constants_8h.html#a7d2919284d7da447f920c583412e69d8',1,'constants.h']]],
-  ['days_5fbetween_5fdates',['days_between_dates',['../utilities_8h.html#acd3e8eebfa9c56ba1cb79e90828cec68',1,'utilities.h']]],
-  ['december',['DECEMBER',['../constants_8h.html#a18ea97ce6c7a0ad2f40c4bd1ac7b26d2a823acaf8f57efe16924d4233a9547c03',1,'constants.h']]],
-  ['delta_5fdate_2eh',['delta_date.h',['../delta__date_8h.html',1,'']]]
+  ['dead',['DEAD',['../game__of__life_8h.html#a3c8793c7acb4598d2ebcd8288f29ee69',1,'game_of_life.h']]],
+  ['dead_5fchar',['DEAD_CHAR',['../game__of__life_8h.html#a1e50cf7b88288775430bb0f360db5bf6',1,'game_of_life.h']]],
+  ['debug',['DEBUG',['../game__of__life_8h.html#ad72dbcf6d0153db1b8d8a58001feed83',1,'game_of_life.h']]],
+  ['displaygame',['displayGame',['../game__of__life_8cpp.html#ae26629d9f0d8ac78079348d9d24e024d',1,'displayGame(const bool game[HEIGHT][WIDTH]):&#160;game_of_life.cpp'],['../game__of__life_8h.html#ae26629d9f0d8ac78079348d9d24e024d',1,'displayGame(const bool game[HEIGHT][WIDTH]):&#160;game_of_life.cpp']]]
 ];

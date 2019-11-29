@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['ask_5fand_5fcompute_5fdelta_5fday_5fbetween_5ftwo_5fdates',['ask_and_compute_delta_day_between_two_dates',['../delta__date_8h.html#a0aa00c0e9c3ebb2aaf65a7ccfffb6e86',1,'delta_date.h']]],
-  ['ask_5fdate',['ask_date',['../delta__date_8h.html#abb8c4657bfbda629fd7ce0435d354637',1,'delta_date.h']]],
-  ['ask_5ffor_5frestart',['ask_for_restart',['../interface_8h.html#aa168270f51adeba28887f16bd8bb6dbb',1,'interface.h']]],
-  ['ask_5ffor_5fvalid_5fdate',['ask_for_valid_date',['../delta__date_8h.html#a661ee7feb8e24a8f63ea228865031ae8',1,'delta_date.h']]]
+  ['computemultiplegens',['computeMultipleGens',['../game__of__life_8cpp.html#a06864979e3e012a3d55b1fe31fdb47b1',1,'computeMultipleGens(bool currentGen[HEIGHT][WIDTH], unsigned n, bool autoStop):&#160;game_of_life.cpp'],['../game__of__life_8h.html#a7582b68bdb24279523d8a009f9db0664',1,'computeMultipleGens(bool currentGen[HEIGHT][WIDTH], unsigned n, bool autoStop=true):&#160;game_of_life.cpp']]],
+  ['computenextgen',['computeNextGen',['../game__of__life_8cpp.html#a8f871dd73c658f9d315ec2c0de86b9e7',1,'computeNextGen(bool currentGen[HEIGHT][WIDTH]):&#160;game_of_life.cpp'],['../game__of__life_8h.html#a8f871dd73c658f9d315ec2c0de86b9e7',1,'computeNextGen(bool currentGen[HEIGHT][WIDTH]):&#160;game_of_life.cpp']]],
+  ['copyarray',['copyArray',['../game__of__life_8cpp.html#aa458968d9bc1e3f93145466b22c2b408',1,'game_of_life.cpp']]]
 ];

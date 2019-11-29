@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['check_5fdate_5forder',['check_date_order',['../utilities_8h.html#a790d01d0aefca81c0b0d0a2087164540',1,'utilities.h']]]
+  ['displaygame',['displayGame',['../game__of__life_8cpp.html#ae26629d9f0d8ac78079348d9d24e024d',1,'displayGame(const bool game[HEIGHT][WIDTH]):&#160;game_of_life.cpp'],['../game__of__life_8h.html#ae26629d9f0d8ac78079348d9d24e024d',1,'displayGame(const bool game[HEIGHT][WIDTH]):&#160;game_of_life.cpp']]]
 ];
