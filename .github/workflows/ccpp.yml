@@ -12,7 +12,7 @@ jobs:
     - name: compile labo08
       run: make labo08
     - name: run labo08
-      run: ./builds/labo08
+      run: ./builds/labo08  <<< "\n" # to finish the process
 
   debug_build:
 
@@ -23,7 +23,7 @@ jobs:
     - name: compile labo08
       run: make labo08 DEBUG=1
     - name: run labo08
-      run: ./builds/labo08
+      run: ./builds/labo08  <<< "\n" # to finish the process
 
   tests:
 
