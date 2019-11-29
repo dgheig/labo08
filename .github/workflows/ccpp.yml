@@ -11,6 +11,8 @@ jobs:
     - uses: actions/checkout@master
     - name: compile labo08
       run: make labo08
+    - name: run labo08
+      run: ./builds/labo08
 
   debug_build:
 
@@ -20,6 +22,8 @@ jobs:
     - uses: actions/checkout@master
     - name: compile labo08
       run: make labo08 DEBUG=1
+    - name: run labo08
+      run: ./builds/labo08
 
   tests:
 
