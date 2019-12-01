@@ -5,6 +5,6 @@
 * Gallay David
 
 ## Naming Conventions
-* variables: camelCase
-* functions: camelCase
-* constants: SCREAMING_SNAKE_CASE
+* Variables: camelCase
+* Functions: camelCase
+* Constants: SCREAMING_SNAKE_CASE

@@ -5,7 +5,6 @@ Fichier     : game_of_life.h
 Auteur(s)   : Jean Gachet et David Gallay
 Date        : 25.11.2019
 
-But         :
 Remarque(s) :
 
 Compilateur : MinGW-g++ 6.3.0 and g++ 7.4.0
@@ -46,7 +45,7 @@ void computeMultipleGens(bool currentGen[HEIGHT][WIDTH], unsigned n, bool autoSt
 void displayGame(const bool game[HEIGHT][WIDTH]);
 
 /**
- * Prefill game with DEAD macro value
+ * Prefills the game with dead cells.
  * @param game Bi-dimensional bool array
  */
 void preFillGame(bool game[HEIGHT][WIDTH]);

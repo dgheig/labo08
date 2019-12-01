@@ -9,6 +9,16 @@ But         :
 Remarque(s) : Documentation is available under pdf and html format.
                   - doc/doc.pdf
                   - doc/doxy/html/index.html
+              DEBUG display is put before the original display since it describes
+              the transition between two steps.
+              It can be activated by using -DDEBUG option on g++
+              or by adding DEBUG=1 on calling make [FLAG]
+
+              There is a github repository:
+               https://github.com/dgheig/labo08
+              A worklfow is used to automaticly compile and test on push
+
+              In extra directory, there's codes using SFML librairie.
 
 Compilateur : MinGW-g++ 6.3.0 and g++ 7.4.0
 -----------------------------------------------------------------------------------*/

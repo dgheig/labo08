@@ -29,10 +29,6 @@ char getDisplayChar(bool value);
  */
 void copyArray(bool fromArray[HEIGHT][WIDTH], bool toArray[HEIGHT][WIDTH]);
 
-/**
- * Prefills the game with dead cells.
- * @param game
- */
 void preFillGame(bool game[HEIGHT][WIDTH]);
 
 bool computeNextGen(bool currentGen[HEIGHT][WIDTH])
@@ -94,7 +90,7 @@ bool computeNextGen(bool currentGen[HEIGHT][WIDTH])
 void computeMultipleGens(bool currentGen[HEIGHT][WIDTH], unsigned n, bool autoStop)
 {
    bool computeNext = true;   //changes are still happening
-   
+
    //computes and displays n generations
    for(unsigned iteration = 0; iteration < n && computeNext; ++iteration)
    {
@@ -185,22 +181,3 @@ void preFillGame(bool game[HEIGHT][WIDTH])
       }
    }
 }
-
-/*
-unsigned nbOfNeighbours(bool game[HEIGHT][WIDTH], int line, int column)
-{
-   unsigned neighbours = 0;
-   for (int lineShift = -1; lineShift <= 1; ++lineShift)             //
-   {                                                                 //for all neighbours
-      for (int columnShift = -1; columnShift <= 1; ++columnShift)    //
-      {
-         if ( line + lineShift >= 0 && column + columnShift >= 0 &&        //excluding underflow
-              line + lineShift < HEIGHT && column + columnShift < WIDTH )  //excluding overflow
-         {
-            neighbours += (unsigned)game[line + lineShift][column + columnShift];
-         }
-      }
-   }
-   if(game[line][column] == ALIVE) --neighbours;
-   return neighbours;
-}*/
