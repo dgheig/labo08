@@ -38,3 +38,8 @@ jobs:
       script:
         - make compute_multiple_gens
         - ./builds/compute_multiple_gens
+    - stage: sfml
+    - name: "test sfml"
+      script:
+        - make sfml
+        - timeout 30 ./builds/sfml
