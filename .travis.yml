@@ -1,6 +1,6 @@
 os:
-  - windows
   - linux
+  - windows
   - osx
 
 language: cpp
