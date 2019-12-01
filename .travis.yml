@@ -7,7 +7,7 @@ language: cpp
 # install: make <command>
 
 compiler:
-  - clang
+  # - clang
   - g++
 
 
