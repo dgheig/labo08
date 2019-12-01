@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nbofneighbours',['nbOfNeighbours',['../game__of__life_8cpp.html#a8742e0a7efe23a5785e6a3b798d6967c',1,'game_of_life.cpp']]]
+  ['prefillgame',['preFillGame',['../game__of__life_8h.html#a9f4d61087c139dd48d682685e4ce916b',1,'game_of_life.h']]]
 ];

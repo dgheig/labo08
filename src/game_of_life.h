@@ -1,3 +1,15 @@
+/*
+-----------------------------------------------------------------------------------
+Laboratoire : Labo_08
+Fichier     : game_of_life.h
+Auteur(s)   : Jean Gachet et David Gallay
+Date        : 25.11.2019
+
+But         :
+Remarque(s) :
+
+Compilateur : MinGW-g++ 6.3.0 and g++ 7.4.0
+-----------------------------------------------------------------------------------*/
 #ifndef GAME_OF_LIFE_H
 #define GAME_OF_LIFE_H
 
@@ -6,7 +18,7 @@
 #define ALIVE true
 #define DEAD false
 #define ALIVE_CHAR 'X'
-#define DEAD_CHAR ' '
+#define DEAD_CHAR 'O'
 
 
 /**
@@ -33,6 +45,10 @@ void computeMultipleGens(bool currentGen[HEIGHT][WIDTH], unsigned n, bool autoSt
  */
 void displayGame(const bool game[HEIGHT][WIDTH]);
 
+/**
+ * Prefill game with DEAD macro value
+ * @param game Bi-dimensional bool array
+ */
 void preFillGame(bool game[HEIGHT][WIDTH]);
 
 #endif // GAME_OF_LIFE_H

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getdisplaychar',['getDisplayChar',['../game__of__life_8cpp.html#ae14bdd1c515446fcd76bc1d638e58718',1,'game_of_life.cpp']]]
+  ['prefillgame',['preFillGame',['../game__of__life_8h.html#a9f4d61087c139dd48d682685e4ce916b',1,'game_of_life.h']]]
 ];
