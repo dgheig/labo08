@@ -29,16 +29,11 @@ char getDisplayChar(bool value);
  */
 void copyArray(bool fromArray[HEIGHT][WIDTH], bool toArray[HEIGHT][WIDTH]);
 
-void preFillGame(bool game[HEIGHT][WIDTH])
-{
-   for(size_t line = 0; line < HEIGHT; ++line)
-   {
-      for(size_t column = 0; column < WIDTH; ++column)
-      {
-         game[line][column] = DEAD;
-      }
-   }
-}
+/**
+ * Prefills the game with dead cells.
+ * @param game
+ */
+void preFillGame(bool game[HEIGHT][WIDTH]);
 
 bool computeNextGen(bool currentGen[HEIGHT][WIDTH])
 {
@@ -95,7 +90,6 @@ bool computeNextGen(bool currentGen[HEIGHT][WIDTH])
 
    return changeDetected;
 }
-
 
 void computeMultipleGens(bool currentGen[HEIGHT][WIDTH], unsigned n, bool autoStop)
 {
@@ -177,6 +171,17 @@ void copyArray(bool fromArray[HEIGHT][WIDTH], bool toArray[HEIGHT][WIDTH])
       for(size_t column = 0; column < WIDTH; ++column)
       {
          toArray[line][column] = fromArray[line][column];
+      }
+   }
+}
+
+void preFillGame(bool game[HEIGHT][WIDTH])
+{
+   for(size_t line = 0; line < HEIGHT; ++line)
+   {
+      for(size_t column = 0; column < WIDTH; ++column)
+      {
+         game[line][column] = DEAD;
       }
    }
 }
