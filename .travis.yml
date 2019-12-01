@@ -29,14 +29,12 @@ script: make
 
 jobs:
   include:
-    - os:
-      - windows
-      - linux
-      - osx
     - stage: test
-      name: "compile tests"
-      script: make compile_tests
-    - name: "run display_game"
-      script: ./builds/display_game
-    - name: "run display_game"
-      script: ./builds/compute_multiple_gens
+    - name: "test display_game"
+      script:
+        - make display_game
+        - ./builds/display_game
+    - name: "test compute_multiple_gens"
+      script:
+        - make compute_multiple_gens
+        - ./builds/compute_multiple_gens
