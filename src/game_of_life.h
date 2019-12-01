@@ -6,7 +6,7 @@
 #define ALIVE true
 #define DEAD false
 #define ALIVE_CHAR 'X'
-#define DEAD_CHAR ' '
+#define DEAD_CHAR 'O'
 
 
 /**
