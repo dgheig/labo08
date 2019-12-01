@@ -5,7 +5,7 @@ Fichier     : labo_08_gachet_jean_gallay_david.cpp
 Auteur(s)   : Jean Gachet et David Gallay
 Date        : 25.11.2019
 
-But         :
+But         : Running shell simulation of the game of life program
 Remarque(s) : Documentation is available under pdf and html format.
                   - doc/doc.pdf
                   - doc/doxy/html/index.html
