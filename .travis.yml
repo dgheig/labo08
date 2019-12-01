@@ -28,11 +28,11 @@ before_script:
 script: make
 
 jobs:
-  os:
-    - windows
-    - linux
-    - osx
   include:
+    - os:
+      - windows
+      - linux
+      - osx
     - stage: test
       name: "compile tests"
       script: make compile_tests
