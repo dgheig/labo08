@@ -1,0 +1,21 @@
+os:
+  - windows
+  - linux
+  - osx
+
+language: cpp
+# install: make <command>
+
+compiler:
+  - clang
+  - g++
+
+jobs:
+  include:
+    - stage: test
+      name: "compile tests"
+      script: make compile_tests
+    - name: "run display_game"
+      script: ./builds/display_game
+    - name: "run display_game"
+      script: ./builds/compute_multiple_gens

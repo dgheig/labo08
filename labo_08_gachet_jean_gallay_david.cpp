@@ -18,13 +18,13 @@ Compilateur : MinGW-g++ 6.3.0 and g++ 7.4.0
 
 using namespace std;
 
-#define EMPTY_BUFFER while(cin.get()!='\n')
+#define WAIT_ENTER while(cin.get()!='\n')
 
 int main() {
    #ifdef DEBUG
       cout << "Debug is active" << endl;
    #endif
-      
+
    bool game[HEIGHT][WIDTH] = { { DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD  },
                                 { DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD  },
                                 { DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD  },
@@ -34,10 +34,10 @@ int main() {
                                 { DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD  },
                                 { DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD  },
                                 { DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD , DEAD  }};
-   
+
    displayGame(game);
    computeMultipleGens(game, 10);
-   
-   EMPTY_BUFFER;
+
+   WAIT_ENTER;
    return EXIT_SUCCESS;
 }
